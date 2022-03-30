@@ -8,9 +8,10 @@
 	        var input1 = document.getElementById("km_inicial").value;
 	        var input2 = document.getElementById("km_final").value;
 	        var km_final = (input2-input1);
-	        var gasto = km_final * 0.53;
+	        var gasto = km_final * 0.53;	
+	        var gastoFormatado = gasto.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
-	        document.getElementById("qtd_gasta").value = gasto;
+	        document.getElementById("qtd_gasta").value = gastoFormatado;
 	    }
 	</script>
 
@@ -20,33 +21,24 @@
 
 </head>
 <body>
-	<div class="container">
-		<center  style="font-family: 'Roboto', sans-serif;">
+	<div class="container" style="font-family: 'Roboto', sans-serif;">
 			<div class="row">
-				<div class="col-12" style="padding-top: 60px;">
-					<h1>KM Inicial:</h1>
-					<input class="form-control" type="text" id="km_inicial" name="" placeholder="Digite aqui..." size="50" style="font-size: 20px">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-top: 60px;">
+					<h2>KM Inicial:</h2>
+					<input class="form-control" type="text" id="km_inicial" name="" placeholder="Digite aqui...">
 					<br><br>
 
-					<h1>KM Final:</h1>
-					<input class="form-control" type="text" id="km_final" name="" placeholder="Digite aqui..." size="50" style="font-size: 20px">
+					<h2>KM Final:</h2>
+					<input class="form-control" type="text" id="km_final" name="" placeholder="Digite aqui...">
 					<br><br>
 
 					<button type="button" onclick="calcular()" class="btn btn-success form-control">Calcular</button>
 					<br><br><br><br>
 
-					<h1>Quantidade Gasta:</h1>
-					
-
-					<div class="input-group mb-3">
-						<div class="input-group-prepend">
-					    	<span class="input-group-text" style="font-size: 20px">R$</span>
-					  	</div>
-					  	<input class="form-control" type="number" id="qtd_gasta" name="" placeholder="Total" step=".01" style="font-size: 20px">
-					</div>
+					<h2>Quantidade Gasta:</h2>
+					<input class="form-control" type="text" id="qtd_gasta" name="" placeholder="Total">
 				</div>
 			</div>
-		</center>
 	</div>
 </body>
 </html>
